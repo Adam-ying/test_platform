@@ -1,0 +1,30 @@
+2023-08-03 17:34:30 - INFO: 用例开始时间：1691055270.917119
+2023-08-03 17:34:31 - INFO: <bound method Response.json of <Response [201]>>
+2023-08-03 17:34:31 - INFO: <bound method Response.json of <Response [201]>>
+2023-08-03 17:34:31 - INFO: 用例名称[name] === 【概览】互动漏斗指标
+
+2023-08-03 17:34:31 - INFO: 请求地址[url] === https://carlsberg.stage.meetwhale.com/graphql/api/whale-resource-biz_VapDashboard/getFunnelViewData
+
+2023-08-03 17:34:31 - INFO: 请求方式[method] === POST
+
+2023-08-03 17:34:31 - INFO: 正文体类型[body_type] === JSON
+
+2023-08-03 17:34:31 - INFO: 请求头文件[headers] === {'authorization': 'D44Y-mimRCuXXzzg2UghPg', 'Content-Type': 'application/json'}
+
+2023-08-03 17:34:31 - INFO: 请求正文体[body] === {"funnel_view_type": "FUNNEL_VIEW_TYPE_INTERACTIVE", "douyin_no": "wusu868688", "start_time": 1688572800, "end_time": 1689177599}
+
+2023-08-03 17:34:31 - INFO: 响应状态码 === 201
+
+2023-08-03 17:34:31 - INFO: 响应时间(ms) === 41
+
+2023-08-03 17:34:31 - INFO: 响应体[body] === {"items":[{"point_name":"IndicatorsTypeExposedUcnt","display_name":"曝光人数","format":"","value":"2442512","channel":""},{"point_name":"IndicatorsTypeWatchUcnt","display_name":"观看人数","format":"","value":"130587","channel":""},{"point_name":"IndicatorsTypeInteractiveUcnt","display_name":"互动人数","format":"","value":"3965","channel":""},{"point_name":"IndicatorsTypeExposedUcntToInteractiveUcntRate","display_name":"曝光-互动率（人数）","format":"%","value":"0.16","channel":""},{"point_name":"IndicatorsTypeExposedUcntToWatchUcntRate","display_name":"曝光-观看率（人数）","format":"%","value":"5.35","channel":""},{"point_name":"IndicatorsTypeInteractiveRate","display_name":"观看-互动率（人数）","format":"%","value":"3.04","channel":""}]}
+
+2023-08-03 17:34:31 - INFO: 检查点[1] === <断言成功> : 响应状态码 预期结果 [201], 实际结果 [201] - [ 检查http响应码 ]
+
+2023-08-03 17:34:31 - INFO: 检查点[2] === <断言成功> : 响应时间 预期结果小于 [2000] ms，实际结果 [41] ms - [ 检查响应时间 ]
+
+2023-08-03 17:34:31 - INFO: 检查点[3] === <断言成功> : 响应Json [errors] 节点不存在 - [ 检查响应中是否包含错误信息 ]
+
+2023-08-03 17:34:31 - INFO: 测试结果 === 接口验证成功
+
+2023-08-03 17:34:31 - INFO: 用例结束时间：1691055271.928027

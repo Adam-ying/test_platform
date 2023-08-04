@@ -1,0 +1,18 @@
+---
+test_demo_single:
+    case_name: 查询规则列表_01
+    case_data:
+        limit: 10
+        shop_id: 19554
+    case_expect:
+        exp_operator_name: SI接口测试
+
+
+---
+test_demo_single:
+    case_name: 查询规则列表_02
+    case_data:
+        limit: 5
+        shop_id: 19554
+    case_expect:
+        exp_operator_name: 测试

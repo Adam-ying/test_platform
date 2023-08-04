@@ -1,0 +1,39 @@
+#---代表可以重复的方法名，不加---代表不能重复
+---
+test_getDataEvaluate:
+    case_name: cast数据概览
+    case_data:
+        method: POST
+        url: /api/whale-resource-biz_VapDashboard/getDataEvaluate
+
+---
+test_getFunnelViewData:
+  case_name: 【概览】带货漏斗指标
+  case_data:
+    method: POST
+    funnel_view_type: FUNNEL_VIEW_TYPE_BRING_GOODS
+    url: /api/whale-resource-biz_VapDashboard/getFunnelViewData
+
+---
+test_getFunnelViewData:
+  case_name: 【概览】互动漏斗指标
+  case_data:
+    method: POST
+    funnel_view_type: FUNNEL_VIEW_TYPE_INTERACTIVE
+    url: /api/whale-resource-biz_VapDashboard/getFunnelViewData
+
+---
+test_getFunnelViewData:
+  case_name: 【概览】关注漏斗指标
+  case_data:
+    method: POST
+    funnel_view_type: FUNNEL_VIEW_TYPE_ATTENTION
+    url: /api/whale-resource-biz_VapDashboard/getFunnelViewData
+
+---
+test_getFunnelViewData:
+  case_name: 【概览】加团漏斗指标
+  case_data:
+    method: POST
+    funnel_view_type: FUNNEL_VIEW_TYPE_ADD_FAN
+    url: /api/whale-resource-biz_VapDashboard/getFunnelViewData
