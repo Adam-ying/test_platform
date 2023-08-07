@@ -1,0 +1,8 @@
+---
+test_demo_scenarios:
+  case_name: 场景测试用例
+  case_data:
+    method: xxxx
+    url: xxxxxx
+---
+
