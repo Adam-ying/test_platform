@@ -28,7 +28,7 @@ class CommonRequest:
         if header_flag:
             self.headers = {'authorization': GetToken(self.env).get_token()}
 
-    # 适用于GraphQL接口
+    # 适用于GraphQL接口的请求
     def send_http_request(self, hc, data, query):
         hc.set_name(name=data['case_name'])
         hc.set_url(url=host.get(self.env))
@@ -37,6 +37,21 @@ class CommonRequest:
             hc.set_headers(headers=self.headers)
         hc.set_body_type(body_type=BodyType.JSON)
         hc.set_body(data={'variables': data['json'], 'query': query})
+        hc.send()
+
+    # 适用于非GraphQl的请求
+    def send_http_requests(self, hc, data):
+        hc.set_name(name=data['case_name'])
+        hc.set_url(url=host.get(self.env))
+        hc.set_method(method=self.post_method)
+        if self.header_flag:
+            hc.set_headers(headers=self.headers)
+        if data.get['body_type', None]:
+            hc.set_body_type(body_type=data['body_type'])
+        if data.get('body', None):
+            hc.set_body(data=data['body'])
+        if data.get('params', None):
+            hc.set_params(params=data['params'])
         hc.send()
 
 

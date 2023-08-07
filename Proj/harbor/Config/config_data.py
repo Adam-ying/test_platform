@@ -1,7 +1,7 @@
 host = {
-    "prod": "https://whale-alivia.prod.meetwhale.com",
-    "stage": "https://whale-alivia.stage.meetwhale.com",
-    "test": "https://whale-alivia.develop.meetwhale.com"
+    "prod": "https://whale-alivia.prod.meetwhale.com/graphql",
+    "stage": "https://whale-alivia.stage.meetwhale.com/graphql",
+    "test": "https://whale-alivia.develop.meetwhale.com/graphql"
 }
 
 login_acc = "18340378802"
