@@ -6,5 +6,5 @@ host = {
 }
 
 # 配置登录账号
-login_acc = "18340378802"
-login_pwd = "aA879736402"
+login_acc = "***********"
+login_pwd = "***********"

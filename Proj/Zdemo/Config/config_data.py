@@ -6,8 +6,5 @@ host = {
 }
 
 # 配置登录账号
-# login_acc = "15057151416"
-# login_pwd = "Zz158396"
-
-login_acc = "15057151416"
-login_pwd = "Zz158396"
+login_acc = "***********"
+login_pwd = "***********"
