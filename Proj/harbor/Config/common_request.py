@@ -17,7 +17,7 @@ class GetToken:
 
         self.cr.send_http_request(self.hc, data=api_params, query=Login_Token.GET_TOKEN)
         value_list = self.hc.json_value('$.data.getToken.token')
-        token = token = value_list and value_list[0] or None
+        token = value_list and value_list[0] or None
         return token
 class CommonRequest:
 
@@ -43,7 +43,7 @@ class CommonRequest:
     def send_http_requests(self, hc, data):
         hc.set_name(name=data['case_name'])
         hc.set_url(url=host.get(self.env))
-        hc.set_method(method=self.post_method)
+        hc.set_method(method=data['method'])
         if self.header_flag:
             hc.set_headers(headers=self.headers)
         if data.get['body_type', None]:

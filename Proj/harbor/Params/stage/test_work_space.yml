@@ -1,1 +1,28 @@
 ---
+test_getDocList:
+  case_name: 获取个人空间文件列表
+  case_data:
+    method: "POST"
+    url: "/api/alivia-server_AliviaResourceService/getDocList"
+    company_id: "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
+    condition: "Condition_AND"
+    limit: 50
+    offset: 0
+    order_by: "UpdateTime"
+    order_by_type: "DESC"
+    space: "Private"
+    user_id: "3606081813914904576w"
+---
+test_getDocList:
+  case_name: 获取共享空间文件列表
+  case_data:
+    method: "POST"
+    url: "/api/alivia-server_AliviaResourceService/getDocList"
+    company_id: "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
+    condition: "Condition_AND"
+    limit: 50
+    offset: 0
+    order_by: "ShareTime"
+    order_by_type: "DESC"
+    space: "Share"
+    user_id: "3606081813914904576w"
