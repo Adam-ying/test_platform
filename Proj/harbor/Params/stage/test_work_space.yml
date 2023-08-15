@@ -3,7 +3,7 @@ test_getDocList:
   case_name: 获取个人空间文件列表
   case_data:
     method: "POST"
-    url: "/api/alivia-server_AliviaResourceService/getDocList"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getDocList"
     company_id: "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
     condition: "Condition_AND"
     limit: 50
@@ -17,7 +17,7 @@ test_getDocList:
   case_name: 获取共享空间文件列表
   case_data:
     method: "POST"
-    url: "/api/alivia-server_AliviaResourceService/getDocList"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getDocList"
     company_id: "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
     condition: "Condition_AND"
     limit: 50
@@ -26,3 +26,46 @@ test_getDocList:
     order_by_type: "DESC"
     space: "Share"
     user_id: "3606081813914904576w"
+
+---
+test_getFolderChildren:
+  case_name: 获取我的空间文件夹
+  case_data:
+    method: "POST"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getFolderChildren"
+    "order_by": "UpdateTime"
+    "order_by_type": "DESC"
+    "user_id": "3606081813914904576w"
+    "limit": 60
+    "offset": 0
+    "tag_ids": [ ]
+    "condition": "Condition_AND"
+    "space": "Private"
+    "company_id": "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
+---
+test_getFolderChildren:
+  case_name: 获取共享空间文件夹
+  case_data:
+    method: "POST"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getFolderChildren"
+    "order_by": "UpdateTime"
+    "order_by_type": "DESC"
+    "user_id": "3606081813914904576w"
+    "limit": 60
+    "offset": 0
+    "tag_ids": [ ]
+    "condition": "Condition_AND"
+    "space": "Share"
+    "company_id": "c53ac779-662f-4e2b-a63d-5fd351f0ef51"
+---
+test_getArchivedList1:
+  case_name: 获取已归档文件
+  case_data:
+    method: "POST"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getArchivedList"
+---
+test_getArchivedList2:
+  case_name: 获取已归档文件夹
+  case_data:
+    method: "POST"
+    url: "/dam-server/api/alivia-server_AliviaResourceService/getArchivedList"

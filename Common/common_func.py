@@ -15,7 +15,7 @@ def read_yaml_params(params_file, test_func_name):
     res_data = []
     try:
         with open(params_file, encoding="utf-8") as f:
-            document_list = list(yaml.load_all(f, Loader=yaml.SafeLoader))  # 获取文档字典列表
+            document_list = list(yaml.load_all(f, Loader=yaml.Loader))  # 获取文档字典列表
             for document_dict in document_list:
                 for key, value in document_dict.items():
                     if key == test_func_name:
@@ -27,15 +27,18 @@ def read_yaml_params(params_file, test_func_name):
 
 
 if __name__ == '__main__':
-    yml_file = os.path.join(project_path(), "Proj", "my_proj", "Params", "stage", "test_myproj.yml")
+    yml_file = os.path.join(project_path(), "Proj", "harbor", "Params", "stage", "test_work_space.yml")
     print(yml_file)
-    test_func_name = "test_getDataEvaluate"
-    res_list = read_yaml_params(yml_file, test_func_name)
-    print(res_list)
-    case_name_list = []
-    for each in res_list:
-        print(each)
-        for item in each.values():
-            print(item)
-            case_name_list.append(item.get("case_name"))
-    print(case_name_list)
+    test_func_name = "test_getDocList"
+    with open(yml_file, encoding="utf-8") as f:
+        document_list = list(yaml.load_all(f, Loader=yaml.Loader))  # 获取文档字典列表
+
+    # res_list = read_yaml_params(yml_file, test_func_name)
+    # print(res_list)
+    # case_name_list = []
+    # for each in res_list:
+    #     print(each)
+    #     for item in each.values():
+    #         print(item)
+    #         case_name_list.append(item.get("case_name"))
+    # print(case_name_list)

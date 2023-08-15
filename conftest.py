@@ -97,7 +97,7 @@ def pytest_generate_tests(metafunc):
     del case_parametrize
 
     # 删除allure生成的源文件
-    del_path_files(os.path.join(project_path(), "Proj", pro_name, "Temps",))
+    # del_path_files(os.path.join(project_path(), "Proj", pro_name, "Temps",))
 
     # -------------------------- 上述整合配置的原型如下 --------------------------
     # metafunc.parametrize("case_name, case_data, case_expect",
