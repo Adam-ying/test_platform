@@ -1,0 +1,11 @@
+---
+test_resourceQaService_getResourceQaList:
+  case_name: 获取提问的信息
+  case_data:
+---
+test_tableModel:
+  case_name: 获取提问的架构信息
+  case_data:
+
+---
+
