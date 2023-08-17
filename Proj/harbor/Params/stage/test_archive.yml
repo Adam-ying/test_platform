@@ -1,0 +1,30 @@
+---
+test_batchUpdateArchiveStatus:
+  case_name: 批量归档
+  case_data:
+    method: "POST"
+    url: '/dam-server/api/resource_ResourceService/batchUpdateArchiveStatus'
+    resource_ids: [
+      "3786448444797986560",
+      "3786425762175635712",
+      "3786275748151501056"
+    ]
+    folder_ids: ["708698"]
+    status: "ArchivedStatus"
+---
+test_batchUpdateArchiveStatus:
+  case_name: 批量取消归档
+  case_data:
+    method: "POST"
+    url: '/dam-server/api/resource_ResourceService/batchUpdateArchiveStatus'
+    resource_ids: [
+      "3786448444797986560",
+      "3786425762175635712",
+      "3786275748151501056"
+    ]
+    folder_ids: [ "708698" ]
+    status: "UnArchiveStatus"
+---
+test_final:
+  case_name: 用于最后
+  case_data: ''
