@@ -1,7 +1,7 @@
 import pytest
 from Common.http_client import HttpClient, BodyType
 from Proj.harbor.Config.config_api import QA
-
+import allure
 
 class TestQA:
     def setup(self):
@@ -9,7 +9,9 @@ class TestQA:
 
     def teardown(self):
         self.hc.get_case_result()
-
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验问答库中的源数据')
     def test_resourceQaService_getResourceQaList(self, common_request, case_name, case_data, case_expect):
         api_params = {
             "case_name": case_name,
@@ -39,7 +41,9 @@ class TestQA:
 
         # 单接口断言并显示检查点结果
         self.hc.assert_and_show_checkpoint()
-
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验问答库中的架构')
     def test_tableModel(self, common_request, case_name, case_data, case_expect):
         api_params = {
             "case_name": case_name,
@@ -62,6 +66,12 @@ class TestQA:
         # 单接口断言并显示检查点结果
         self.hc.assert_and_show_checkpoint()
 
+    # 由于不知道什么原因 最后一个用例无法在allure报告上生成 所以加了一个用例用于最后一个防止不生成用例
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('最后的')
+    def test_final(self, common_request, case_name, case_data, case_expect):
+        pass
 
 if __name__ == "__main__":
     pytest.main()

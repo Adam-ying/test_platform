@@ -69,3 +69,8 @@ test_getArchivedList2:
   case_data:
     method: "POST"
     url: "/dam-server/api/alivia-server_AliviaResourceService/getArchivedList"
+
+---
+test_final:
+  case_name: 用于最后
+  case_data: ''

@@ -1,4 +1,7 @@
 import os
+import time
+
+
 def t():
     if True:
         pass
@@ -13,5 +16,6 @@ def k(path):
     print(file_list[-1])
 
 if __name__ == '__main__':
-    t()
-    k('/Users/edz/PycharmProjects/test_platform/Proj/my_proj/Reports')
+    print(time.time())
+    time.sleep(1)
+    print(time.time())

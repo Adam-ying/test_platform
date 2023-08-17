@@ -1,3 +1,4 @@
+import allure
 import pytest
 from Common.http_client import HttpClient, BodyType
 from Proj.harbor.Config.robot import FeishuRobot
@@ -12,6 +13,8 @@ class TestWorkSpace:
         self.hc.get_case_result()
 
     @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验工作空间中的文件')
     def test_getDocList(self, common_request, case_name, case_data, case_expect):
         # 配置发送请求的参数
         api_params = {
@@ -49,6 +52,8 @@ class TestWorkSpace:
         self.hc.assert_and_show_checkpoint()
 
     @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验工作空间中的文件夹')
     def test_getFolderChildren(self, common_request, case_name, case_data, case_expect):
         api_params = {
             "case_name": case_name,
@@ -85,6 +90,8 @@ class TestWorkSpace:
         self.hc.assert_and_show_checkpoint()
 
     @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验已归档中的文件')
     def test_getArchivedList1(self, common_request, case_name, case_data, case_expect):
         api_params = {
             "case_name": case_name,
@@ -118,6 +125,9 @@ class TestWorkSpace:
         # 单接口断言并显示检查点结果
         self.hc.assert_and_show_checkpoint()
 
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验已归档中的文件夹')
     def test_getArchivedList2(self, common_request, case_name, case_data, case_expect):
         api_params = {
             "case_name": case_name,
@@ -149,7 +159,12 @@ class TestWorkSpace:
 
         self.hc.assert_and_show_checkpoint()
 
-
+    # 由于不知道什么原因 最后一个用例无法在allure报告上生成 所以加了一个用例用于最后一个防止不生成用例
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('最后的')
+    def test_final(self, common_request, case_name, case_data, case_expect):
+        pass
 
 if __name__ == "__main__":
     pytest.main()

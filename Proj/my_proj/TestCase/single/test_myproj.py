@@ -1,5 +1,3 @@
-import os
-import time
 import allure
 import pytest
 from Common.http_client import HttpClient, BodyType
@@ -25,6 +23,7 @@ class TestCast:
         self.hc.get_case_result()  # 获取用例执行结果并显示日志
         self.browser.close()
         self.playwright.stop()
+
 
     @allure.severity("critical")
     @allure.epic("项目名称：首页数据概览")
@@ -125,11 +124,11 @@ class TestCast:
         self.hc.check_response_less_than(exp=2000, msg="检查响应时间")  # 检查响应时间是否小于等于2秒
         self.hc.check_json_path_node_not_existent(path="errors",
                                                   msg="检查响应中是否包含错误信息")  # 检查：响应信息中是否不存在'errors'节点内容
-        if self.hc.status_code != 201:
-            alert = FeishuRobot()
-            title = "【概览】漏斗指标接口报错"
-            content = f"getFunnelViewData接口状态码返回不对"
-            alert.post_to_robot(title, content)
+        # if self.hc.status_code != 201:
+        #     alert = FeishuRobot()
+        #     title = "【概览】漏斗指标接口报错"
+        #     content = f"getFunnelViewData接口状态码返回不对"
+        #     alert.post_to_robot(title, content)
 
         # 4.添加业务检查点
         res = self.hc.json_value(path='$.items[?(@.display_name)]')
@@ -152,6 +151,10 @@ class TestCast:
         #     alert.post_to_robot(title, content)
         # 5.单接口断言并显示检查点结果
         self.hc.assert_and_show_checkpoint()
+
+
+
+
 
 
 if __name__ == "__main__":
