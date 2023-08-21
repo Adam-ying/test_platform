@@ -6,7 +6,38 @@ test_resourceQaService_getResourceQaList:
 test_tableModel:
   case_name: 获取提问的架构信息
   case_data:
-
+---
+test_createMaterial:
+  case_name: 创建问答
+  case_data:
+    url: "/dam-server/api/resource_ThirdMaterialService/createMaterial"
+    method: "POST"
+---
+test_createComment :
+  case_name: 创建评论
+  case_data:
+---
+test_getComments:
+  case_name: 查看评论是否在评论区
+  case_data:
+    url: "/dam-server/api/comment_CommentService/getComments"
+    method: "POST"
+---
+test_updateMaterial:
+  case_name: 编辑问题
+  case_data:
+    url: '/dam-server/api/resource_ThirdMaterialService/updateMaterial'
+    method: 'POST'
+---
+test_operateResource:
+  case_name: 验证是否编辑问题成功
+  case_data:
+    url: '/dam-server/api/resource_ResourceService/operateResource'
+    method: 'POST'
+---
+test_resourceTaskDetail:
+  case_name: 获取资源用户信息用于更新列表页的标题修改
+  case_data:
 ---
 test_final:
   case_name: 用于最后
