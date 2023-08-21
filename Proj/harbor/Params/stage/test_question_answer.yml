@@ -39,6 +39,10 @@ test_resourceTaskDetail:
   case_name: 获取资源用户信息用于更新列表页的标题修改
   case_data:
 ---
+test_operateResource_delete:
+  case_name: 删除问答
+  case_data:
+---
 test_final:
   case_name: 用于最后
   case_data:

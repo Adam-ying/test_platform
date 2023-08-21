@@ -266,7 +266,34 @@ class TestQA:
 
         self.hc.assert_and_show_checkpoint()
 
-    def test_
+    @pytest.mark.SMOKING_BY_HARBOR
+    @allure.feature('harbor')
+    @allure.story('检验问答库详情页删除问答')
+    def test_operateResource_delete(self, common_request, case_name, case_data, case_expect):
+        api_params = {
+            "case_name": case_name,
+            "json": {
+                "req": {
+                    "type": "Delete",
+                    "company_id": "c53ac779-662f-4e2b-a63d-5fd351f0ef51",
+                    "res_ids": [
+                        self.__class__.id
+                    ]
+                }
+            }
+        }
+
+        common_request.send_http_request(hc=self.hc, data=api_params, query=QA.resourceTaskDetailDelete)
+
+        self.hc.check_status_code(exp=200, msg="检查http响应码")
+        self.hc.check_response_less_than(exp=2000, msg="检查响应时间")
+        self.hc.check_json_path_node_not_existent(path='error', msg='检查响应中是否包含错误信息')
+
+        res = self.hc.json_value(path='$.data.operateResource.code')[0]
+
+        assert res == 0
+
+        self.hc.assert_and_show_checkpoint()
 
     # 由于不知道什么原因 最后一个用例无法在allure报告上生成 所以加了一个用例用于最后一个防止不生成用例
     @pytest.mark.SMOKING_BY_HARBOR
